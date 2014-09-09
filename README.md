@@ -37,7 +37,7 @@ For example:
 
 In case of error, the script will return error message. For example:
 
-```
+```json
 {
   "error": "Please enter a valid email address."
 }
@@ -231,7 +231,7 @@ Because API uses cookies to authenticate requests, the simplest way to use API i
 
 ##### Authorization:
 
-``` 
+``` jquery
 $.ajax({
     url: 'https://offcloud.com/api/login/classic',
     data: {username: 'test@test.com', password: 'test'},
@@ -247,7 +247,7 @@ xhrFields: {
 
 #####  Adding an URL for Instant downloading:
 
-```
+```jquery
 $.ajax({
     url: 'https://offcloud.com/api/instant/download',
     data: {'url' : 'http://www.cnn.com'},
@@ -263,7 +263,7 @@ xhrFields: {
 
 #####  Retrieving a list of available remote accounts:
 
-```
+```jquery
 $.ajax({
     url: 'https://offcloud.com/api/remote-account/list',
     data: { },
