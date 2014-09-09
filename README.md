@@ -73,7 +73,12 @@ In the case when adding this URL is not available for this user, API will return
 
 Here are the following values of the ‘not_available’ response and their descriptions:
 
-Table
+| Name | Description          |
+| ------------- | ----------- |
+| premium      | User must purchase a premium downloading addon for this download.|
+| links     | User must purchase a Link increase addon for this download.   |
+| proxy     | User must purchase a proxy downloading addon for this download. |
+| video     | User must purchase a video sharing site support addon for this download.     |
 
 When a request cannot be processed, API will return error message in the JSON answer.
 
@@ -104,7 +109,13 @@ In the case when adding this URL is not available for this user, API will return
 
 Here are the following values of the ‘not_available’ response and their descriptions:
 
-Table
+| Name | Description          |
+| ------------- | ----------- |
+| premium      | User must purchase a premium downloading addon for this download.|
+| links     | User must purchase a Link increase addon for this download.   |
+| proxy     | User must purchase a proxy downloading addon for this download. |
+| cloud     | User must purchase a clowd downloading upgrade addon for this download. |
+| video     | User must purchase a video sharing site support addon for this download.     |
 
 When a request cannot be processed, API will return error message in the JSON answer.
 
@@ -137,7 +148,12 @@ In the case when adding this URL is not available for this user, API will return
 
 Here are the following values of the ‘not_available’ response and their descriptions:
 
-Table
+| Name | Description          |
+| ------------- | ----------- |
+| premium      | User must purchase a premium downloading addon for this download.|
+| links     | User must purchase a Link increase addon for this download.   |
+| proxy     | User must purchase a proxy downloading addon for this download. |
+| video     | User must purchase a video sharing site support addon for this download.     |
 
 When a request cannot be processed, API will return error message in the JSON answer.
 
