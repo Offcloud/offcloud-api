@@ -185,6 +185,17 @@ https://offcloud.com/api/cloud/status
 The server will return status of the download or an error message if the request cannot be processed.
 
 
+### Exploring zipped files or folder archives from cloud
+
+To explore your zipped files or folder archives in your cloud history, simply pass a requestId parameter to the following script:
+
+```
+https://offcloud.com/api/cloud/explore
+```
+
+The server will return a JSON array of download links to each file stored in archive.
+
+
 ### Retrieving a list of user’s remote accounts
 
 To get a list of user’s remote accounts, make a query to the following script:
@@ -212,6 +223,7 @@ https://offcloud.com/api/remote/status
 ```
 
 The server will return a status of the download or an error message if the request cannot be processed.
+
 
 
 ## Check that user is logged in to Offcloud.com
