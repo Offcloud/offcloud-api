@@ -1,4 +1,4 @@
-Offcloud.com API v.1
+Offcloud.com API
 ===============
 
 ## Introduction to the Offcloud.com API
