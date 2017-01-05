@@ -14,7 +14,13 @@ All requests return JSON, including errors. All parameters should be passed to A
 
 ## Authentificate to the Offcloud.com API
 
-You authenticate to the Offcloud by sending credentials to https://offcloud.com/api/login/classic 
+The best way to authentificate to Offcloud is to add "?apikey=" to your API queries, along with your API key. You can find your API key into your account settings @ https://offcloud.com/#/account
+
+```
+https://offcloud.com/api/*/?apikey=API_KEY
+```
+
+You can also authenticate to Offcloud by sending credentials to https://offcloud.com/api/login/classic 
 
 Parameters are:
 
@@ -50,14 +56,15 @@ To send the further requests you must pass the cookie “connect.sid” returned
 
 ### Adding an URL for instant downloading
 
-To add an URL for instant downloading, pass the following variables to the script:
+To add an URL for instant downloading, you can make a POST call to the following URL with the available variables described below:
 
 ```
-https://offcloud.com/api/instant/download
+https://offcloud.com/api/instant/download?apikey=API_KEY
 ```
 
 * url: URL of downloaded resource
 * proxyId: (optional) ID of the preferred proxy server to use. If proxyId is not specified,  the default user proxy server will be used
+* apikey: API key found into your Offcloud's account settings
 
 In the case of success, the script will return the following JSON answer:
 * requestId
@@ -85,13 +92,14 @@ When a request cannot be processed, API will return error message in the JSON an
 
 ### Adding an URL for cloud downloading.
 
-To add an URL for cloud downloading, pass the following variables to the script:
+To add an URL for cloud downloading, you can make a POST call to the following URL with the available variables described below:
 
 ```
-https://offcloud.com/api/cloud/download 
+https://offcloud.com/api/cloud/download?apikey=API_KEY
 ```
 
 * url: URL of downloaded resource
+* apikey: API key found into your Offcloud's account settings
 
 In the case of success, the script will return the following JSON answer:
 * requestId
@@ -122,14 +130,15 @@ When a request cannot be processed, API will return error message in the JSON an
 
 ### Adding an URL for remote downloading.
 
-To add an URL for remote downloading, pass the following variables to the script:
+To add an URL for remote downloading, you can make a POST call to the following URL with the available variables described below:
 
 ```
-https://offcloud.com/api/remote/download 
+https://offcloud.com/api/remote/download?apikey=API_KEY 
 ```
 
 * url: URL of downloaded resource
 * remoteOptionId: ID of the remote account where to download
+* apikey: API key found into your Offcloud's account settings
 
 To get a list of all users remote accounts, see the section “Retrieving a list of remote accounts”.
 
@@ -162,10 +171,10 @@ When a request cannot be processed, API will return error message in the JSON an
 
 ### Retrieving a list of available proxy servers
 
-To get a list of available proxy servers, make a query to the following script:
+To get a list of available proxy servers, you can make a POST call to the following URL:
 
 ```
-https://offcloud.com/api/proxy/list
+https://offcloud.com/api/proxy/list?apikey=API_KEY
 ```
 
 This script will return a JSON array of the available proxy servers with the following data:
@@ -176,10 +185,10 @@ This script will return a JSON array of the available proxy servers with the fol
 
 ### Retrieving a status of user’s cloud download
 
-To get a status of user’s cloud download, pass a requestId parameter to the following script:
+To get a status of user’s cloud download, you can make a POST call with a requestId parameter to the following URL:
 
 ```
-https://offcloud.com/api/cloud/status
+https://offcloud.com/api/cloud/status?apikey=API_KEY
 ```
 
 The server will return status of the download or an error message if the request cannot be processed.
@@ -187,10 +196,10 @@ The server will return status of the download or an error message if the request
 
 ### Exploring zipped files or folder archives from cloud
 
-To explore your zipped files or folder archives in your cloud history, simply pass a requestId parameter to the following script:
+To explore your zipped files or folder archives in your cloud history, you can make a POST call with a requestId parameter to the following URL:
 
 ```
-https://offcloud.com/api/cloud/explore
+https://offcloud.com/api/cloud/explore?apikey=API_KEY
 ```
 
 The server will return a JSON array of download links to each file stored in archive.
@@ -198,10 +207,10 @@ The server will return a JSON array of download links to each file stored in arc
 
 ### Retrieving a list of user’s remote accounts
 
-To get a list of user’s remote accounts, make a query to the following script:
+To get a list of user’s remote accounts, you can make a POST call to the following URL:
 
 ```
-https://offcloud.com/api/remote-account/list
+https://offcloud.com/api/remote-account/list?apikey=API_KEY
 ```
 
 This script will return a JSON array of the current user’s remote accounts with the following data:
@@ -216,10 +225,10 @@ This script will return a JSON array of the current user’s remote accounts wit
 
 ### Retrieving a status of user’s remote download
 
-To get a status of user’s remote download, pass a requestId parameter to the following script:
+To get a status of user’s remote download, you can make a POST call with a requestId parameter to the following URL:
 
 ```
-https://offcloud.com/api/remote/status
+https://offcloud.com/api/remote/status?apikey=API_KEY
 ```
 
 The server will return a status of the download or an error message if the request cannot be processed.
@@ -228,10 +237,10 @@ The server will return a status of the download or an error message if the reque
 
 ## Check that user is logged in to Offcloud.com
 
-To check that user is logged in to Offcloud.com, make a query to the following script:
+To check that user is logged in to Offcloud.com, you can make a POST call to the following URL:
 
 ```
-https://offcloud.com/api/login/check
+https://offcloud.com/api/login/check?apikey=API_KEY
 ```
 
 This script will return a JSON response with the following data:
@@ -261,7 +270,7 @@ xhrFields: {
 
 ```js
 $.ajax({
-    url: 'https://offcloud.com/api/instant/download',
+    url: 'https://offcloud.com/api/instant/download?apikey=VHK7OoGO57kH1JOO9VlNo8AdRVF0qLD8',
     data: {'url' : 'http://www.cnn.com'},
     type: 'POST',
     crossDomain: true, // enable this
@@ -277,7 +286,7 @@ xhrFields: {
 
 ```js
 $.ajax({
-    url: 'https://offcloud.com/api/remote-account/list',
+    url: 'https://offcloud.com/api/remote-account/list?apikey=VHK7OoGO57kH1JOO9VlNo8AdRVF0qLD8',
     data: { },
     type: 'POST',
     crossDomain: true, // enable this
