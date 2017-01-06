@@ -49,7 +49,7 @@ In case of error, the script will return error message. For example:
 }
 ```
 
-To send the further requests you must pass the cookie “connect.sid” returned by auth request.
+To send the further requests you must pass the cookie “connect.sid” returned by auth request. In that case, you will no longer need to add "?apikey=" GET variable to your queries.
 
 
 ## Submitting an input to Offcloud.com through the API
@@ -64,7 +64,6 @@ https://offcloud.com/api/instant/download?apikey=API_KEY
 
 * url: URL of downloaded resource
 * proxyId: (optional) ID of the preferred proxy server to use. If proxyId is not specified,  the default user proxy server will be used
-* apikey: API key found into your Offcloud's account settings
 
 In the case of success, the script will return the following JSON answer:
 * requestId
@@ -99,7 +98,6 @@ https://offcloud.com/api/cloud/download?apikey=API_KEY
 ```
 
 * url: URL of downloaded resource
-* apikey: API key found into your Offcloud's account settings
 
 In the case of success, the script will return the following JSON answer:
 * requestId
@@ -138,7 +136,6 @@ https://offcloud.com/api/remote/download?apikey=API_KEY
 
 * url: URL of downloaded resource
 * remoteOptionId: ID of the remote account where to download
-* apikey: API key found into your Offcloud's account settings
 
 To get a list of all users remote accounts, see the section “Retrieving a list of remote accounts”.
 
@@ -196,10 +193,10 @@ The server will return status of the download or an error message if the request
 
 ### Exploring zipped files or folder archives from cloud
 
-To explore your zipped files or folder archives in your cloud history, you can make a POST call with a requestId parameter to the following URL:
+To explore your zipped files or folder archives in your cloud history, you can make a GET call with a requestId parameter to the following URL:
 
 ```
-https://offcloud.com/api/cloud/explore?apikey=API_KEY
+https://offcloud.com/api/cloud/explore?requestId=YOUR_REQUEST_ID
 ```
 
 The server will return a JSON array of download links to each file stored in archive.
@@ -237,10 +234,10 @@ The server will return a status of the download or an error message if the reque
 
 ## Check that user is logged in to Offcloud.com
 
-To check that user is logged in to Offcloud.com, you can make a POST call to the following URL:
+To check that user is logged in to Offcloud.com, you can make a GET call to the following URL:
 
 ```
-https://offcloud.com/api/login/check?apikey=API_KEY
+https://offcloud.com/api/login/check
 ```
 
 This script will return a JSON response with the following data:
@@ -248,7 +245,7 @@ This script will return a JSON response with the following data:
 
 ## Examples
 
-Because API uses cookies to authenticate requests, the simplest way to use API is to write a browser script. Here are some examples of jQuery API calls:
+Here are some examples of jQuery API calls:
 
 ##### Authorization:
 
@@ -265,6 +262,8 @@ xhrFields: {
     error: function() { console.log('Failed!'); }
 });	
 ```
+
+The above example is obsolete if you opt to use for an authentification via API key. We actually recommend you use the API key with the "?apikey=" GET variable. 
 
 #####  Adding an URL for Instant downloading:
 
