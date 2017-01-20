@@ -243,6 +243,22 @@ https://offcloud.com/api/login/check
 This script will return a JSON response with the following data:
 * loggedIn: 1 if user is logged in, else 0
 
+
+
+## Retrieve API Key from logged in session
+
+To retrieve the API key when you are logged in to Offcloud.com, you can make a POST call to the following URL:
+
+```
+https://offcloud.com/api/account/get
+```
+
+This script will return a JSON response with the following data:
+* email: email of the logged in user
+* apiKey: API key of the currently authorized user
+
+
+
 ## Examples
 
 Here are some examples of jQuery API calls:
