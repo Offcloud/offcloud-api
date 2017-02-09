@@ -136,6 +136,7 @@ https://offcloud.com/api/remote/download?apikey=API_KEY
 
 * url: URL of downloaded resource
 * remoteOptionId: ID of the remote account where to download
+* folderId: Google Drive's ID of the folder to upload content to.
 
 To get a list of all users remote accounts, see the section “Retrieving a list of remote accounts”.
 
