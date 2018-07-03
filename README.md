@@ -212,7 +212,7 @@ https://offcloud.com/api/remote-account/list?apikey=API_KEY
 ```
 
 This script will return a JSON array of the current user’s remote accounts with the following data:
-* accountId
+* remoteOptionId
 * type: type of account
 * username: login used for the remote account
 * status: status of the account
