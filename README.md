@@ -120,7 +120,7 @@ Here are the following values of the ‘not_available’ response and their desc
 | premium      | User must purchase a premium downloading addon for this download.|
 | links     | User must purchase a Link increase addon for this download.   |
 | proxy     | User must purchase a proxy downloading addon for this download. |
-| cloud     | User must purchase a clowd downloading upgrade addon for this download. |
+| cloud     | User must purchase a cloud downloading upgrade addon for this download. |
 | video     | User must purchase a video sharing site support addon for this download.     |
 
 When a request cannot be processed, API will return error message in the JSON answer.
