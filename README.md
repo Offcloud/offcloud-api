@@ -197,7 +197,7 @@ The server will return status of the download or an error message if the request
 To explore your zipped files or folder archives in your cloud history, you can make a GET call with a requestId parameter to the following URL:
 
 ```
-https://offcloud.com/api/cloud/explore?requestId=YOUR_REQUEST_ID
+https://offcloud.com/api/cloud/explore/YOUR_REQUEST_ID
 ```
 
 The server will return a JSON array of download links to each file stored in archive.
