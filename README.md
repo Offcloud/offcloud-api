@@ -202,6 +202,14 @@ https://offcloud.com/api/cloud/explore/YOUR_REQUEST_ID
 
 The server will return a JSON array of download links to each file stored in archive.
 
+You also have the following option available:
+
+```
+https://offcloud.com/api/cloud/list/YOUR_REQUEST_ID
+```
+
+The server will return a list of download links to each file stored in archive (one link per line).
+
 
 ### Retrieving a list of user’s remote accounts
 
