@@ -240,6 +240,23 @@ https://offcloud.com/api/remote/status?apikey=API_KEY
 The server will return a status of the download or an error message if the request cannot be processed.
 
 
+### Retrying a failed download qrequest
+
+If you wish to retry a failed cloud donwload request, you can make a GET request to the following URL.
+
+```
+ https://offcloud.com/api/cloud/tryagain/REQUEST_ID?apikey=API_KEY
+```
+
+If you wish to retry a failed remote download request, you can make a GET request to the following URL.
+
+```
+ https://offcloud.com/api/remote/tryagain/REQUEST_ID?apikey=API_KEY
+```
+
+The REQUEST_ID corresponds to the failed download request. The server will return a confirmation or fail response in JSON.
+
+
 
 ## Check that user is logged in to Offcloud.com
 
