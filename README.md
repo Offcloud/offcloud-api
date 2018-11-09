@@ -17,7 +17,7 @@ All requests return JSON, including errors. All parameters should be passed to A
 The best way to authentificate to Offcloud is to add "?apikey=" to your API queries, along with your API key. You can find your API key into your account settings @ https://offcloud.com/#/account
 
 ```
-https://offcloud.com/api/*/?apikey=API_KEY
+https://offcloud.com/api/*/?apikey=[api_key]
 ```
 
 You can also authenticate to Offcloud by sending credentials to https://offcloud.com/api/login/classic 
@@ -59,7 +59,7 @@ To send the further requests you must pass the cookie “connect.sid” returned
 To add an URL for instant downloading, you can make a POST call to the following URL with the available variables described below:
 
 ```
-https://offcloud.com/api/instant/download?apikey=API_KEY
+https://offcloud.com/api/instant/download?apikey=[api_key]
 ```
 
 * url: URL of downloaded resource
@@ -94,7 +94,7 @@ When a request cannot be processed, API will return error message in the JSON an
 To add an URL for cloud downloading, you can make a POST call to the following URL with the available variables described below:
 
 ```
-https://offcloud.com/api/cloud/download?apikey=API_KEY
+https://offcloud.com/api/cloud/download?apikey=[api_key]
 ```
 
 * url: URL of downloaded resource
@@ -131,7 +131,7 @@ When a request cannot be processed, API will return error message in the JSON an
 To add an URL for remote downloading, you can make a POST call to the following URL with the available variables described below:
 
 ```
-https://offcloud.com/api/remote/download?apikey=API_KEY 
+https://offcloud.com/api/remote/download?apikey=[api_key] 
 ```
 
 * url: URL of downloaded resource
@@ -172,7 +172,7 @@ When a request cannot be processed, API will return error message in the JSON an
 To get a list of available proxy servers, you can make a POST call to the following URL:
 
 ```
-https://offcloud.com/api/proxy/list?apikey=API_KEY
+https://offcloud.com/api/proxy/list?apikey=[api_key]
 ```
 
 This script will return a JSON array of the available proxy servers with the following data:
@@ -186,7 +186,7 @@ This script will return a JSON array of the available proxy servers with the fol
 To get a status of user’s cloud download, you can make a POST call with a requestId parameter to the following URL:
 
 ```
-https://offcloud.com/api/cloud/status?apikey=API_KEY
+https://offcloud.com/api/cloud/status?apikey=[api_key]
 ```
 
 The server will return status of the download or an error message if the request cannot be processed.
@@ -197,7 +197,7 @@ The server will return status of the download or an error message if the request
 To explore your zipped files or folder archives in your cloud history, you can make a GET call with a requestId parameter to the following URL:
 
 ```
-https://offcloud.com/api/cloud/explore/YOUR_REQUEST_ID
+https://offcloud.com/api/cloud/explore/[requestId]
 ```
 
 The server will return a JSON array of download links to each file stored in archive.
@@ -205,7 +205,7 @@ The server will return a JSON array of download links to each file stored in arc
 You also have the following option available:
 
 ```
-https://offcloud.com/api/cloud/list/YOUR_REQUEST_ID
+https://offcloud.com/api/cloud/list/[requestId]
 ```
 
 The server will return a list of download links to each file stored in archive (one link per line).
@@ -216,7 +216,7 @@ The server will return a list of download links to each file stored in archive (
 To get a list of user’s remote accounts, you can make a POST call to the following URL:
 
 ```
-https://offcloud.com/api/remote-account/list?apikey=API_KEY
+https://offcloud.com/api/remote-account/list?apikey=[api_key]
 ```
 
 This script will return a JSON array of the current user’s remote accounts with the following data:
@@ -234,7 +234,7 @@ This script will return a JSON array of the current user’s remote accounts wit
 To get a status of user’s remote download, you can make a POST call with a requestId parameter to the following URL:
 
 ```
-https://offcloud.com/api/remote/status?apikey=API_KEY
+https://offcloud.com/api/remote/status?apikey=[api_key]
 ```
 
 The server will return a status of the download or an error message if the request cannot be processed.
@@ -245,13 +245,13 @@ The server will return a status of the download or an error message if the reque
 If you wish to retry a failed cloud donwload request, you can make a GET request to the following URL.
 
 ```
- https://offcloud.com/api/cloud/tryagain/REQUEST_ID?apikey=API_KEY
+ https://offcloud.com/api/cloud/tryagain/[requestId]?apikey=[api_key]
 ```
 
 If you wish to retry a failed remote download request, you can make a GET request to the following URL.
 
 ```
- https://offcloud.com/api/remote/tryagain/REQUEST_ID?apikey=API_KEY
+ https://offcloud.com/api/remote/tryagain/[requestId]?apikey=[api_key]
 ```
 
 The REQUEST_ID corresponds to the failed download request. The server will return a confirmation or fail response in JSON.
