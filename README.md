@@ -17,7 +17,7 @@ All requests return JSON, including errors. All parameters should be passed to A
 The best way to authentificate to Offcloud is to add "?key=" to your API queries, along with your API key. You can find your API key into your account settings @ https://offcloud.com/#/account
 
 ```
-https://offcloud.com/api/*/?key=[api_key]
+https://offcloud.com/api/*?key=[api_key]
 ```
 
 You can also authenticate to Offcloud by sending credentials to https://offcloud.com/api/login 
@@ -94,7 +94,7 @@ When a request cannot be processed, API will return error message in the JSON an
 To add an URL for cloud downloading, you can make a POST call to the following URL with the available variables described below:
 
 ```
-https://offcloud.com/api/coud?key=[api_key]
+https://offcloud.com/api/cloud?key=[api_key]
 ```
 
 * url: URL of downloaded resource
